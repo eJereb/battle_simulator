@@ -1,10 +1,10 @@
 package battle_simulator;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-
+import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -27,13 +27,42 @@ class GUI extends JFrame{
 }
 
 class Main extends JPanel{
+	BufferedImage ozadje;
+	BufferedImage igralec1;
+	BufferedImage igralec2;
 	public Main() {
-		setMinimumSize(new Dimension(800, 400));
+		//setMinimumSize(new Dimension(800, 400));
+		ozadje = null;
+		try { 
+			ozadje = ImageIO.read(new File("slike/Ozadje.png"));
+			igralec1 = ImageIO.read(new File("slike/Jerry.png"));
+			igralec2 = ImageIO.read(new File("slike/Tom.png"));
+			
+					
+		} catch(IOException e){
+			
+		}
+		
+		
+		
+		
 		
 	}
-	
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		
+		g.drawImage(ozadje, 0, 0, 800, 400, this);
+		g.drawImage(igralec1, 50, 250, 100, 100, this);
+		g.drawImage(igralec2, 600, 250, 100, 100, this);
+		
+		
+	}
+	@Override
+	public Dimension getPreferredSize() {
+		return new Dimension(800, 400);
+	}
 }
-
 class Inp_B extends JPanel{
 	public Inp_B() {
 		setMinimumSize(new Dimension(800, 200));
