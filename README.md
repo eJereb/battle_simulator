@@ -5,7 +5,7 @@ potem pa se na ekranu odvije bitka. Da igra nebi bila trivialna, vsi napadi nasp
 nasprotnikovo “zdravje” spravi na nič. 
 
 
-###Avtorja: 
+### Avtorja: 
 
 Luka Markelj 
 
